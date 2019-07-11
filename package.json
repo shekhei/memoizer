@@ -1,0 +1,25 @@
+{
+  "name": "memoizer",
+  "version": "0.0.1",
+  "description": "Turn your functions into memorized versions",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm build",
+    "test": "echo 'no tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csballz/memoizer.git"
+  },
+  "keywords": [
+    "memoize",
+    "utility"
+  ],
+  "types": "dist/index.d.ts",
+  "author": "Wong Shek Hei Felix",
+  "bugs": {
+    "url": "https://github.com/csballz/memoizer/issues"
+  },
+  "homepage": "https://github.com/csballz/memoizer#readme"
+}
