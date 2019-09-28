@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-- latest
 - stable
-- '10'
-- '8'
+- lts/Dubnium
+- lts/Carbon
 
