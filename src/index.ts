@@ -1,29 +1,8 @@
+import { memoize } from "./memoize";
+import { UnaryFn, Fn } from "./common";
+
 class END { }
 const endInstance = new END;
-
-type Fn<I, O> = (...args: I[]) => O;
-type UnaryFn<I, O> = (arg: I) => O;
-type UnaryArrFn<I, O> = (arg: I[]) => O;
-
-/**
- * 
- * @param f UnaryFn
- * @example
- * function sqrt(a) { return Math.sqrt(a); }
- * const memoizedSqrt = memoize(sqrt);
- * memorizedSqrt(4) // 2
- */
-export function memoize<I, O>(f: UnaryFn<I, O>): UnaryFn<I, O> {
-	const memo = new Map<I, O>();
-	return (i: I) => {
-		if (memo.has(i)) {
-			return memo.get(i) as O;
-		}
-		const result = f(i);
-		memo.set(i, result);
-		return result;
-	};
-}
 
 export function curryAndMemoize<I, O>(f: Fn<I, O>, depth: 0): UnaryFn<I, O>
 export function curryAndMemoize<I, O>(f: Fn<I, O>, depth: number): UnaryFn<I, Fn<I, O>>
